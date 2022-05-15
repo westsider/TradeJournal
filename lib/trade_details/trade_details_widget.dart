@@ -1,7 +1,9 @@
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TradeDetailsWidget extends StatefulWidget {
@@ -12,6 +14,7 @@ class TradeDetailsWidget extends StatefulWidget {
 }
 
 class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
+  DateTime datePicked;
   String dropDownValue1;
   String dropDownValue2;
   String dropDownValue3;
@@ -57,16 +60,50 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                    child: Text(
-                      'DateTime',
-                      textAlign: TextAlign.start,
-                      style: FlutterFlowTheme.of(context).bodyText1,
+                  Align(
+                    alignment: AlignmentDirectional(0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              await DatePicker.showDatePicker(
+                                context,
+                                showTitleActions: true,
+                                onConfirm: (date) {
+                                  setState(() => datePicked = date);
+                                },
+                                currentTime: getCurrentTimestamp,
+                                minTime: DateTime(0, 0, 0),
+                              );
+                            },
+                            text: 'Date',
+                            options: FFButtonOptions(
+                              width: 250,
+                              height: 40,
+                              color: Color(0xFF303030),
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                  ),
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1,
+                              ),
+                              borderRadius: 12,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                    padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 4),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -96,7 +133,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                    padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 4),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -126,7 +163,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                    padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 4),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -143,7 +180,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                    padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 4),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -160,7 +197,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                    padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 4),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -177,7 +214,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                    padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 4),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -194,7 +231,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                    padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 4),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -211,7 +248,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                    padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 4),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -353,6 +390,30 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                           hidesUnderline: true,
                         ),
                       ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 28, 16, 2),
+                    child: FFButtonWidget(
+                      onPressed: () {
+                        print('Button pressed ...');
+                      },
+                      text: 'Update',
+                      options: FFButtonOptions(
+                        width: double.infinity,
+                        height: 40,
+                        color: Color(0xFF303030),
+                        textStyle:
+                            FlutterFlowTheme.of(context).subtitle2.override(
+                                  fontFamily: 'Poppins',
+                                  color: Colors.white,
+                                ),
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1,
+                        ),
+                        borderRadius: 12,
+                      ),
                     ),
                   ),
                 ],
