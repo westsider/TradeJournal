@@ -1,6 +1,5 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -25,6 +24,21 @@ class _JournalWidgetState extends State<JournalWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+        iconTheme: IconThemeData(color: Color(0xFF303030)),
+        automaticallyImplyLeading: true,
+        title: Text(
+          'Journal',
+          style: FlutterFlowTheme.of(context).title1.override(
+                fontFamily: 'Poppins',
+                color: Color(0xFF303030),
+              ),
+        ),
+        actions: [],
+        centerTitle: true,
+        elevation: 4,
+      ),
       backgroundColor: Color(0xFFF1F4F8),
       body: Stack(
         children: [
@@ -38,7 +52,7 @@ class _JournalWidgetState extends State<JournalWidget> {
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -693,40 +707,6 @@ class _JournalWidgetState extends State<JournalWidget> {
                 ),
               ),
             ],
-          ),
-          Align(
-            alignment: AlignmentDirectional(1, 1),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 16, 16, 20),
-              child: FFButtonWidget(
-                onPressed: () async {
-                  await Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => JournalWidget(),
-                    ),
-                  );
-                },
-                text: 'Map View',
-                options: FFButtonOptions(
-                  width: 95,
-                  height: 40,
-                  color: Color(0xFF4B39EF),
-                  textStyle: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Lexend Deca',
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                      ),
-                  elevation: 2,
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  borderRadius: 8,
-                ),
-              ),
-            ),
           ),
         ],
       ),
