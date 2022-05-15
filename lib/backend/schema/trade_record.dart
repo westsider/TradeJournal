@@ -17,18 +17,6 @@ abstract class TradeRecord implements Built<TradeRecord, TradeRecordBuilder> {
   DateTime get createdAt;
 
   @nullable
-  double get risk;
-
-  @nullable
-  double get t1;
-
-  @nullable
-  double get t2;
-
-  @nullable
-  double get t3;
-
-  @nullable
   String get error;
 
   @nullable
@@ -56,21 +44,37 @@ abstract class TradeRecord implements Built<TradeRecord, TradeRecordBuilder> {
   String get tradeType;
 
   @nullable
+  @BuiltValueField(wireName: 'risk_str')
+  String get riskStr;
+
+  @nullable
+  @BuiltValueField(wireName: 't1_str')
+  String get t1Str;
+
+  @nullable
+  @BuiltValueField(wireName: 't2_str')
+  String get t2Str;
+
+  @nullable
+  @BuiltValueField(wireName: 't3_str')
+  String get t3Str;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
   static void _initializeBuilder(TradeRecordBuilder builder) => builder
-    ..risk = 0.0
-    ..t1 = 0.0
-    ..t2 = 0.0
-    ..t3 = 0.0
     ..error = ''
     ..reviewRisk = ''
     ..reviewEntry = ''
     ..reviewScale = ''
     ..reviewExit = ''
     ..tradeDirection = ''
-    ..tradeType = '';
+    ..tradeType = ''
+    ..riskStr = ''
+    ..t1Str = ''
+    ..t2Str = ''
+    ..t3Str = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Trade');
@@ -96,10 +100,6 @@ abstract class TradeRecord implements Built<TradeRecord, TradeRecordBuilder> {
 Map<String, dynamic> createTradeRecordData({
   DocumentReference user,
   DateTime createdAt,
-  double risk,
-  double t1,
-  double t2,
-  double t3,
   String error,
   String reviewRisk,
   String reviewEntry,
@@ -107,20 +107,24 @@ Map<String, dynamic> createTradeRecordData({
   String reviewExit,
   String tradeDirection,
   String tradeType,
+  String riskStr,
+  String t1Str,
+  String t2Str,
+  String t3Str,
 }) =>
     serializers.toFirestore(
         TradeRecord.serializer,
         TradeRecord((t) => t
           ..user = user
           ..createdAt = createdAt
-          ..risk = risk
-          ..t1 = t1
-          ..t2 = t2
-          ..t3 = t3
           ..error = error
           ..reviewRisk = reviewRisk
           ..reviewEntry = reviewEntry
           ..reviewScale = reviewScale
           ..reviewExit = reviewExit
           ..tradeDirection = tradeDirection
-          ..tradeType = tradeType));
+          ..tradeType = tradeType
+          ..riskStr = riskStr
+          ..t1Str = t1Str
+          ..t2Str = t2Str
+          ..t3Str = t3Str));

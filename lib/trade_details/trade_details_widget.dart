@@ -87,10 +87,6 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
             final tradeCreateData = createTradeRecordData(
               user: currentUserReference,
               createdAt: datePicked,
-              risk: double.parse(textFieldRiskPointsController.text),
-              t1: double.parse(textFieldT1Controller.text),
-              t2: double.parse(textFieldT2Controller.text),
-              t3: double.parse(textFieldT3Controller.text),
               error: valueOrDefault<String>(
                 textController6.text,
                 'none',
@@ -104,6 +100,10 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
               reviewExit: dropDownRateExitValue,
               tradeDirection: dropDownDirectionValue,
               tradeType: dropDownTradeTypeValue,
+              riskStr: textFieldRiskPointsController.text,
+              t1Str: textFieldT1Controller.text,
+              t2Str: textFieldT2Controller.text,
+              t3Str: textFieldT3Controller.text,
             );
             await TradeRecord.collection.doc().set(tradeCreateData);
           },
