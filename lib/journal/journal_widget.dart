@@ -1,5 +1,7 @@
+import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../trade_details/trade_details_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -35,7 +37,27 @@ class _JournalWidgetState extends State<JournalWidget> {
                 color: Color(0xFF303030),
               ),
         ),
-        actions: [],
+        actions: [
+          FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              Icons.add,
+              color: Colors.black,
+              size: 30,
+            ),
+            onPressed: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TradeDetailsWidget(),
+                ),
+              );
+            },
+          ),
+        ],
         centerTitle: true,
         elevation: 4,
       ),
