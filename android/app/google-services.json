@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "685084508143",
+    "project_id": "trade-journal-10f78",
+    "storage_bucket": "trade-journal-10f78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685084508143:android:56106096a963344664401a",
+        "android_client_info": {
+          "package_name": "net.swiftsense.trade_journal_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685084508143-jur45oru9fe12mdsrjs3vqohukdq6bm0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.swiftsense.trade_journal_android",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "685084508143-fgeaue5k4q9qk1djr1avs3kfj19vavkp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiKSrv57EvfU0byc4E5dC-NQ-KLOoZcEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685084508143-fgeaue5k4q9qk1djr1avs3kfj19vavkp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "685084508143-gphp0vadupbg0m9rsi8afvv33ui5vj72.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "net.swiftsense.tradeJournalIos"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685084508143:android:ececc77e77b6b18d64401a",
+        "android_client_info": {
+          "package_name": "net.swiftsense.tradejournal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685084508143-fl2oe045s9ho34o8edmdkge5g822uhdd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "net.swiftsense.tradejournal",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "685084508143-fgeaue5k4q9qk1djr1avs3kfj19vavkp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiKSrv57EvfU0byc4E5dC-NQ-KLOoZcEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685084508143-fgeaue5k4q9qk1djr1avs3kfj19vavkp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "685084508143-gphp0vadupbg0m9rsi8afvv33ui5vj72.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "net.swiftsense.tradeJournalIos"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
