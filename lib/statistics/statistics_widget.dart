@@ -539,7 +539,7 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
                                 ),
                               ),
                               Text(
-                                'Total Sales',
+                                'Total Profit',
                                 textAlign: TextAlign.center,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText2
