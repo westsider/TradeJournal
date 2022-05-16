@@ -106,6 +106,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
               t3Str: textFieldT3Controller.text,
             );
             await TradeRecord.collection.doc().set(tradeCreateData);
+            Navigator.pop(context);
           },
         ),
       ),
