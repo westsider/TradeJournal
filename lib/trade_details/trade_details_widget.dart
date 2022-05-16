@@ -20,6 +20,7 @@ class TradeDetailsWidget extends StatefulWidget {
 
 class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
   DateTime datePicked;
+  String dropDownContractValue;
   String dropDownDirectionValue;
   String dropDownTradeTypeValue;
   TextEditingController textFieldRiskPointsController;
@@ -104,6 +105,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
               t1Str: textFieldT1Controller.text,
               t2Str: textFieldT2Controller.text,
               t3Str: textFieldT3Controller.text,
+              contract: dropDownContractValue,
             );
             await TradeRecord.collection.doc().set(tradeCreateData);
             Navigator.pop(context);
@@ -164,6 +166,37 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                                 borderRadius: 12,
                               ),
                             ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 4),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Contract',
+                            style: FlutterFlowTheme.of(context).bodyText1,
+                          ),
+                          FlutterFlowDropDown(
+                            initialOption: dropDownContractValue ??= 'Micro',
+                            options: ['Micro', 'Mini'].toList(),
+                            onChanged: (val) =>
+                                setState(() => dropDownContractValue = val),
+                            width: 180,
+                            height: 50,
+                            textStyle: FlutterFlowTheme.of(context).bodyText1,
+                            hintText: 'Please select...',
+                            fillColor: Colors.white,
+                            elevation: 2,
+                            borderColor: Colors.transparent,
+                            borderWidth: 0,
+                            borderRadius: 0,
+                            margin:
+                                EdgeInsetsDirectional.fromSTEB(12, 4, 12, 4),
+                            hidesUnderline: true,
                           ),
                         ],
                       ),

@@ -13,13 +13,13 @@ String combineTargets(
   String t1,
   String t2,
   String t3,
-  bool isMicro,
+  String contract,
 ) {
   var t1Double = double.parse(t1);
   var t2Double = double.parse(t2);
   var t3Double = double.parse(t3);
   var sum = t1Double + t2Double + t3Double;
-  if (isMicro) {
+  if (contract == 'micro') {
     sum = sum * 5;
   } else {
     sum = sum * 50;

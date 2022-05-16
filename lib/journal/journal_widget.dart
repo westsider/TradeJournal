@@ -160,7 +160,10 @@ class _JournalWidgetState extends State<JournalWidget> {
                                               listViewTradeRecord.t3Str,
                                               '\"0.0\"',
                                             ),
-                                            false),
+                                            valueOrDefault<String>(
+                                              listViewTradeRecord.contract,
+                                              '\"micro\"',
+                                            )),
                                         '\"0.0\"',
                                       ),
                                       style: FlutterFlowTheme.of(context)
