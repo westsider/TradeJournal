@@ -3,6 +3,7 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../trade_details/trade_details_widget.dart';
+import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -145,7 +146,22 @@ class _JournalWidgetState extends State<JournalWidget> {
                                           .bodyText1,
                                     ),
                                     Text(
-                                      listViewTradeRecord.t1Str,
+                                      valueOrDefault<String>(
+                                        functions.combineTargets(
+                                            valueOrDefault<String>(
+                                              listViewTradeRecord.t1Str,
+                                              '\"0.0\"',
+                                            ),
+                                            valueOrDefault<String>(
+                                              listViewTradeRecord.t2Str,
+                                              '\"0.0\"',
+                                            ),
+                                            valueOrDefault<String>(
+                                              listViewTradeRecord.t3Str,
+                                              '\"0.0\"',
+                                            )),
+                                        '\"0.0\"',
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1,
                                     ),
