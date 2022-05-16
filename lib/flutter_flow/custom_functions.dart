@@ -13,10 +13,17 @@ String combineTargets(
   String t1,
   String t2,
   String t3,
+  bool isMicro,
 ) {
   var t1Double = double.parse(t1);
   var t2Double = double.parse(t2);
   var t3Double = double.parse(t3);
   var sum = t1Double + t2Double + t3Double;
-  return sum.toString();
+  if (isMicro) {
+    sum = sum * 5;
+  } else {
+    sum = sum * 50;
+  }
+  var currency = NumberFormat.simpleCurrency().format(sum);
+  return currency;
 }
