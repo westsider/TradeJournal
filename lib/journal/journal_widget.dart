@@ -134,7 +134,7 @@ class _JournalWidgetState extends State<JournalWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      dateTimeFormat('d/M h:mm a',
+                                      dateTimeFormat('M/d h:mm a',
                                           listViewTradeRecord.createdAt),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1,
