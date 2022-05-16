@@ -315,7 +315,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText: '[Some hint text...]',
+                                hintText: '3400.25',
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -380,7 +380,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText: '[Some hint text...]',
+                                hintText: '4.0',
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -444,7 +444,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText: '[Some hint text...]',
+                                hintText: '8.0',
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -508,7 +508,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText: '[Some hint text...]',
+                                hintText: '12.0',
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
