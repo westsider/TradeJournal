@@ -31,7 +31,7 @@ class _JournalWidgetState extends State<JournalWidget> {
         iconTheme: IconThemeData(color: Color(0xFF303030)),
         automaticallyImplyLeading: true,
         title: Text(
-          'Journal',
+          'Latest Trades',
           style: FlutterFlowTheme.of(context).title1.override(
                 fontFamily: 'Poppins',
                 color: Color(0xFF303030),
@@ -198,8 +198,8 @@ class _JournalWidgetState extends State<JournalWidget> {
                                         8, 8, 8, 8),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8),
-                                      child: Image.network(
-                                        'https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c3RvcmV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+                                      child: Image.asset(
+                                        'assets/images/moneyBag.png',
                                         width: 74,
                                         height: 74,
                                         fit: BoxFit.cover,
@@ -220,7 +220,7 @@ class _JournalWidgetState extends State<JournalWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
-                                            'Journal Page',
+                                            '12-22-2022',
                                             style: FlutterFlowTheme.of(context)
                                                 .subtitle2
                                                 .override(
@@ -236,7 +236,7 @@ class _JournalWidgetState extends State<JournalWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
-                                            '123 Address St, City, ST',
+                                            'Join',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText2
                                                 .override(
@@ -252,7 +252,7 @@ class _JournalWidgetState extends State<JournalWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Text(
-                                            '1.7mi',
+                                            '\$1,200',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyText1
                                                 .override(
@@ -307,117 +307,8 @@ class _JournalWidgetState extends State<JournalWidget> {
                                         8, 8, 8, 8),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8),
-                                      child: Image.network(
-                                        'https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c3RvcmV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
-                                        width: 74,
-                                        height: 74,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8, 1, 0, 0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            'Store/Location Name',
-                                            style: FlutterFlowTheme.of(context)
-                                                .subtitle2
-                                                .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF090F13),
-                                                  fontSize: 16,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            '123 Address St, City, ST',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText2
-                                                .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF95A1AC),
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.normal,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            '1.7mi',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF4B39EF),
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w500,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0, 0, 8, 0),
-                                      child: Icon(
-                                        Icons.chevron_right_outlined,
-                                        color: Color(0xFF95A1AC),
-                                        size: 24,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
-                        child: Container(
-                          width: double.infinity,
-                          height: 90,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8, 8, 8, 8),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8),
-                                      child: Image.network(
-                                        'https://images.unsplash.com/photo-1605217613423-0a61bd725c8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHN0b3JlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                                      child: Image.asset(
+                                        'assets/images/moneyBag.png',
                                         width: 74,
                                         height: 74,
                                         fit: BoxFit.cover,
@@ -525,8 +416,8 @@ class _JournalWidgetState extends State<JournalWidget> {
                                         8, 8, 8, 8),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8),
-                                      child: Image.network(
-                                        'https://images.unsplash.com/photo-1481437156560-3205f6a55735?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fHN0b3JlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                                      child: Image.asset(
+                                        'assets/images/moneyBurn.png',
                                         width: 74,
                                         height: 74,
                                         fit: BoxFit.cover,
@@ -634,8 +525,117 @@ class _JournalWidgetState extends State<JournalWidget> {
                                         8, 8, 8, 8),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8),
-                                      child: Image.network(
-                                        'https://images.unsplash.com/photo-1543996469-600fbadfc1e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fHN0b3JlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                                      child: Image.asset(
+                                        'assets/images/moneyPlant.png',
+                                        width: 74,
+                                        height: 74,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      8, 1, 0, 0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            'Store/Location Name',
+                                            style: FlutterFlowTheme.of(context)
+                                                .subtitle2
+                                                .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  color: Color(0xFF090F13),
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            '123 Address St, City, ST',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText2
+                                                .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  color: Color(0xFF95A1AC),
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.normal,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            '1.7mi',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  color: Color(0xFF4B39EF),
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 0, 8, 0),
+                                      child: Icon(
+                                        Icons.chevron_right_outlined,
+                                        color: Color(0xFF95A1AC),
+                                        size: 24,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
+                        child: Container(
+                          width: double.infinity,
+                          height: 90,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        8, 8, 8, 8),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        'assets/images/moneyBomb.png',
                                         width: 74,
                                         height: 74,
                                         fit: BoxFit.cover,
