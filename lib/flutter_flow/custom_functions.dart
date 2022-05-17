@@ -15,9 +15,28 @@ String combineTargets(
   String t3,
   String contract,
 ) {
-  var t1Double = double.parse(t1);
-  var t2Double = double.parse(t2);
-  var t3Double = double.parse(t3);
+  var t1Double = 0.0;
+  var t2Double = 0.0;
+  var t3Double = 0.0;
+
+  try {
+    t1Double = double.parse(t1);
+  } catch (e) {
+    print(e.toString);
+  }
+
+  try {
+    t2Double = double.parse(t2);
+  } catch (e) {
+    print(e.toString);
+  }
+
+  try {
+    t3Double = double.parse(t3);
+  } catch (e) {
+    print(e.toString);
+  }
+
   var sum = t1Double + t2Double + t3Double;
   if (contract == 'micro') {
     sum = sum * 5;
