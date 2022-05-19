@@ -108,11 +108,21 @@ class _JournalWidgetState extends State<JournalWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Image.network(
-                            'https://picsum.photos/seed/87/600',
-                            width: 100,
-                            height: 100,
-                            fit: BoxFit.cover,
+                          InkWell(
+                            onTap: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => TradeDetailsWidget(),
+                                ),
+                              );
+                            },
+                            child: Image.network(
+                              'https://picsum.photos/seed/87/600',
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
