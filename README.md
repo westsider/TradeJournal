@@ -43,5 +43,6 @@ stlss -> statelestt widget
 To run an emulator, run flutter emulators --launch Pixel XL API 31
 
 flutter clean --verbose
+flutter pub get
 flutter packages pub run build_runner build --delete-conflicting-outputs
 ./gradlew build    ./gradlew clean
