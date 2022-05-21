@@ -17,12 +17,12 @@ class SignUpWidget extends StatefulWidget {
 }
 
 class _SignUpWidgetState extends State<SignUpWidget> {
-  final scaffoldKey = GlobalKey<ScaffoldState>();
   TextEditingController confirmPasswordController;
   bool confirmPasswordVisibility;
   TextEditingController emailAddressController;
   TextEditingController passwordController;
   bool passwordVisibility;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -310,8 +310,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                 children: [
                   FFButtonWidget(
                     onPressed: () async {
-                      if (passwordController.text !=
-                          confirmPasswordController.text) {
+                      if (passwordController?.text !=
+                          confirmPasswordController?.text) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(

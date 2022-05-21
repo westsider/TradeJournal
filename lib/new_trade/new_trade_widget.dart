@@ -11,14 +11,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TradeDetailsWidget extends StatefulWidget {
-  const TradeDetailsWidget({Key key}) : super(key: key);
+class NewTradeWidget extends StatefulWidget {
+  const NewTradeWidget({Key key}) : super(key: key);
 
   @override
-  _TradeDetailsWidgetState createState() => _TradeDetailsWidgetState();
+  _NewTradeWidgetState createState() => _NewTradeWidgetState();
 }
 
-class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
+class _NewTradeWidgetState extends State<NewTradeWidget> {
   DateTime datePicked;
   String dropDownContractValue;
   String dropDownDirectionValue;
@@ -55,7 +55,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
         iconTheme: IconThemeData(color: Color(0xFF303030)),
         automaticallyImplyLeading: true,
         title: Text(
-          'Trade Details',
+          'New Trade ',
           textAlign: TextAlign.start,
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Poppins',
@@ -106,6 +106,10 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
               t2Str: textFieldT2Controller.text,
               t3Str: textFieldT3Controller.text,
               contract: dropDownContractValue,
+              entryPrice: valueOrDefault<String>(
+                textFieldEntryPriceController.text,
+                '3400',
+              ),
             );
             await TradeRecord.collection.doc().set(tradeCreateData);
             Navigator.pop(context);
@@ -310,7 +314,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                                     ? InkWell(
                                         onTap: () => setState(
                                           () => textFieldRiskPointsController
-                                              .clear(),
+                                              ?.clear(),
                                         ),
                                         child: Icon(
                                           Icons.clear,
@@ -375,7 +379,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                                     ? InkWell(
                                         onTap: () => setState(
                                           () => textFieldEntryPriceController
-                                              .clear(),
+                                              ?.clear(),
                                         ),
                                         child: Icon(
                                           Icons.clear,
@@ -439,7 +443,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                                         .text.isNotEmpty
                                     ? InkWell(
                                         onTap: () => setState(
-                                          () => textFieldT1Controller.clear(),
+                                          () => textFieldT1Controller?.clear(),
                                         ),
                                         child: Icon(
                                           Icons.clear,
@@ -503,7 +507,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                                         .text.isNotEmpty
                                     ? InkWell(
                                         onTap: () => setState(
-                                          () => textFieldT2Controller.clear(),
+                                          () => textFieldT2Controller?.clear(),
                                         ),
                                         child: Icon(
                                           Icons.clear,
@@ -567,7 +571,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                                         .text.isNotEmpty
                                     ? InkWell(
                                         onTap: () => setState(
-                                          () => textFieldT3Controller.clear(),
+                                          () => textFieldT3Controller?.clear(),
                                         ),
                                         child: Icon(
                                           Icons.clear,
@@ -633,7 +637,7 @@ class _TradeDetailsWidgetState extends State<TradeDetailsWidget> {
                                   suffixIcon: textController6.text.isNotEmpty
                                       ? InkWell(
                                           onTap: () => setState(
-                                            () => textController6.clear(),
+                                            () => textController6?.clear(),
                                           ),
                                           child: Icon(
                                             Icons.clear,

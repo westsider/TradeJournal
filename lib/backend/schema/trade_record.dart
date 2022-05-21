@@ -63,6 +63,10 @@ abstract class TradeRecord implements Built<TradeRecord, TradeRecordBuilder> {
   String get contract;
 
   @nullable
+  @BuiltValueField(wireName: 'entry_price')
+  String get entryPrice;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -78,7 +82,8 @@ abstract class TradeRecord implements Built<TradeRecord, TradeRecordBuilder> {
     ..t1Str = ''
     ..t2Str = ''
     ..t3Str = ''
-    ..contract = '';
+    ..contract = ''
+    ..entryPrice = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('Trade');
@@ -116,6 +121,7 @@ Map<String, dynamic> createTradeRecordData({
   String t2Str,
   String t3Str,
   String contract,
+  String entryPrice,
 }) =>
     serializers.toFirestore(
         TradeRecord.serializer,
@@ -133,4 +139,5 @@ Map<String, dynamic> createTradeRecordData({
           ..t1Str = t1Str
           ..t2Str = t2Str
           ..t3Str = t3Str
-          ..contract = contract));
+          ..contract = contract
+          ..entryPrice = entryPrice));

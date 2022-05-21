@@ -1,8 +1,9 @@
 import '../backend/backend.dart';
+import '../edit_trade/edit_trade_widget.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import '../trade_details/trade_details_widget.dart';
+import '../new_trade/new_trade_widget.dart';
 import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -47,7 +48,7 @@ class _JournalWidgetState extends State<JournalWidget> {
               await Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => TradeDetailsWidget(),
+                  builder: (context) => NewTradeWidget(),
                 ),
               );
             },
@@ -104,87 +105,103 @@ class _JournalWidgetState extends State<JournalWidget> {
                     return Card(
                       clipBehavior: Clip.antiAliasWithSaveLayer,
                       color: Color(0xFFF5F5F5),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => TradeDetailsWidget(),
-                                ),
-                              );
-                            },
-                            child: Image.network(
-                              'https://picsum.photos/seed/87/600',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.cover,
+                      child: InkWell(
+                        onTap: () async {
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => EditTradeWidget(
+                                tradeID: listViewTradeRecord.reference,
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                            child: Container(
-                              width: 260,
-                              height: 100,
-                              constraints: BoxConstraints(
-                                maxWidth: double.infinity,
-                                maxHeight: double.infinity,
-                              ),
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).lineColor,
-                              ),
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      dateTimeFormat('M/d h:mm a',
-                                          listViewTradeRecord.createdAt),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1,
+                          );
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            InkWell(
+                              onTap: () async {
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => EditTradeWidget(
+                                      tradeID: listViewTradeRecord.reference,
                                     ),
-                                    Text(
-                                      listViewTradeRecord.tradeType,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1,
-                                    ),
-                                    Text(
-                                      valueOrDefault<String>(
-                                        functions.combineTargets(
-                                            valueOrDefault<String>(
-                                              listViewTradeRecord.t1Str,
-                                              '\"0.0\"',
-                                            ),
-                                            valueOrDefault<String>(
-                                              listViewTradeRecord.t2Str,
-                                              '\"0.0\"',
-                                            ),
-                                            valueOrDefault<String>(
-                                              listViewTradeRecord.t3Str,
-                                              '\"0.0\"',
-                                            ),
-                                            valueOrDefault<String>(
-                                              listViewTradeRecord.contract,
-                                              '\"micro\"',
-                                            )),
-                                        '\"0.0\"',
+                                  ),
+                                );
+                              },
+                              child: Image.network(
+                                'https://picsum.photos/seed/87/600',
+                                width: 100,
+                                height: 100,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                              child: Container(
+                                width: 260,
+                                height: 100,
+                                constraints: BoxConstraints(
+                                  maxWidth: double.infinity,
+                                  maxHeight: double.infinity,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context).lineColor,
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      8, 8, 8, 8),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        dateTimeFormat('M/d h:mm a',
+                                            listViewTradeRecord.createdAt),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1,
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyText1,
-                                    ),
-                                  ],
+                                      Text(
+                                        listViewTradeRecord.tradeType,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1,
+                                      ),
+                                      Text(
+                                        valueOrDefault<String>(
+                                          functions.combineTargets(
+                                              valueOrDefault<String>(
+                                                listViewTradeRecord.t1Str,
+                                                '\"0.0\"',
+                                              ),
+                                              valueOrDefault<String>(
+                                                listViewTradeRecord.t2Str,
+                                                '\"0.0\"',
+                                              ),
+                                              valueOrDefault<String>(
+                                                listViewTradeRecord.t3Str,
+                                                '\"0.0\"',
+                                              ),
+                                              valueOrDefault<String>(
+                                                listViewTradeRecord.contract,
+                                                '\"micro\"',
+                                              )),
+                                          '\"0.0\"',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     );
                   },
