@@ -48,18 +48,11 @@ String combineTargets(
 }
 
 String sumProfit(List<DocumentReference> tradeDocs) {
-  //var myList = [25, 63, 84];
-
-  //traverse through each element of list
-//  for (var i = 0; i < tradeDocs.length; i++) {
-//    print(tradeDocs[i]);
-//  }
-
   for (final trade in tradeDocs) {
     var currentElement = trade.firestore;
     var ele = currentElement.doc;
+    print('here is an element...');
     print('each element $ele');
   }
-
   return "test data";
 }
