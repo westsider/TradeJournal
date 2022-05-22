@@ -46,3 +46,13 @@ String combineTargets(
   var currency = NumberFormat.simpleCurrency().format(sum);
   return currency;
 }
+
+String sumProfit(List<DocumentReference> tradeDocs) {
+  //var myList = [25, 63, 84];
+
+  //traverse through each element of list
+  for (var i = 0; i < tradeDocs.length; i++) {
+    print(tradeDocs[i]);
+  }
+  return "test data";
+}
