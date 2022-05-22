@@ -52,11 +52,13 @@ String sumProfit(List<DocumentReference> tradeDocs) {
     var currentElement = trade.firestore;
     var ele = currentElement.doc;
     Map<String, dynamic> data = ele as Map<String, dynamic>;
+    Map<String, dynamic> data2 = currentElement as Map<String, dynamic>;
     // (String) => DocumentReference<Map<String, dynamic>> :
     print('here is an element...');
     print('each element $ele');
     print(data['t1_str']);
-    print(data['t2_str']);
+    print(data);
+    print(data2);
   }
   return "test data";
 }
