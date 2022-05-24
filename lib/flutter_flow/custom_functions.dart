@@ -18,24 +18,9 @@ String combineTargets(
   var t1Double = 0.0;
   var t2Double = 0.0;
   var t3Double = 0.0;
-
-  try {
-    t1Double = double.parse(t1);
-  } catch (e) {
-    print(e.toString);
-  }
-
-  try {
-    t2Double = double.parse(t2);
-  } catch (e) {
-    print(e.toString);
-  }
-
-  try {
-    t3Double = double.parse(t3);
-  } catch (e) {
-    print(e.toString);
-  }
+  t1Double = stringToDouble(t1);
+  t2Double = stringToDouble(t2);
+  t3Double = stringToDouble(t3);
 
   var sum = t1Double + t2Double + t3Double;
   if (contract == 'micro') {
@@ -48,17 +33,40 @@ String combineTargets(
 }
 
 String sumProfit(List<DocumentReference> tradeDocs) {
-  for (final trade in tradeDocs) {
-    var currentElement = trade.firestore;
-    var ele = currentElement.doc;
-    Map<String, dynamic> data = ele as Map<String, dynamic>;
-    Map<String, dynamic> data2 = currentElement as Map<String, dynamic>;
-    // (String) => DocumentReference<Map<String, dynamic>> :
-    print('here is an element...');
-    print('each element $ele');
-    print(data['t1_str']);
-    print(data);
-    print(data2);
+  var t1Double = 0.0;
+  var t2Double = 0.0;
+  var t3Double = 0.0;
+  var total = 0.0;
+  String t1srt = "no value;";
+
+  FirebaseFirestore.instance
+      .collection("Trade")
+      .get()
+      .then((QuerySnapshot querySnapshot) {
+    querySnapshot.docs.forEach((doc) {
+      t1srt = doc["t1_str"];
+      String t2srt = doc["t2_str"];
+      String t3srt = doc["t3_str"];
+      t1Double = stringToDouble(t1srt);
+      print('coverted t1 $t1Double');
+      t2Double = stringToDouble(t2srt);
+      print('coverted t2 $t2Double');
+      t3Double = stringToDouble(t3srt);
+      print('coverted t3 $t3Double');
+      double sum = t1Double + t2Double + t3Double;
+      total += sum;
+      print('sum: $sum, total $total');
+    });
+  });
+  return total.toString();
+}
+
+double stringToDouble(String value) {
+  double result = 0.0;
+  try {
+    result = double.parse(value);
+    return result;
+  } catch (e) {
+    print(e.toString);
   }
-  return "test data";
 }
