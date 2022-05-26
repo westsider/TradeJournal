@@ -97,13 +97,33 @@ double largestWinner(
     // Pass index of -1 if you want a grand total across all indexes
     maxIndex = data.length - 1;
   }
-  var largestWinner = 0.0;
+  double largestWinner = 0.0;
   for (var i = 0; i <= maxIndex; i++) {
     double thisGain = data[i].totalGain;
     if (thisGain > largestWinner) {
-      largestWinner = largestWinner;
+      largestWinner = thisGain;
     }
-    print('index $index, gain: $thisGain, largest winner: $largestWinner');
+    print('index $maxIndex, gain: $thisGain, largest winner: $largestWinner');
   }
   return largestWinner;
+}
+
+double largestLooser(
+  List<TradeRecord> data,
+  int index,
+) {
+  var maxIndex = index;
+  if (maxIndex == -1 || index >= data.length) {
+    // Pass index of -1 if you want a grand total across all indexes
+    maxIndex = data.length - 1;
+  }
+  double largestLoser = 0.0;
+  for (var i = 0; i <= maxIndex; i++) {
+    double thisGain = data[i].totalGain;
+    if (thisGain < largestLoser) {
+      largestLoser = thisGain;
+    }
+    print('index $maxIndex, gain: $thisGain, largest winner: $largestLoser');
+  }
+  return largestLoser;
 }

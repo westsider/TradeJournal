@@ -672,14 +672,18 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 12, 0, 12),
                                   child: Text(
-                                    '\$1100 loss',
+                                    functions
+                                        .largestLooser(
+                                            statisticsTradeRecordList.toList(),
+                                            statisticsTradeRecordList.length)
+                                        .toString(),
                                     textAlign: TextAlign.center,
                                     style:
                                         FlutterFlowTheme.of(context).subtitle1,
                                   ),
                                 ),
                                 Text(
-                                  'Average',
+                                  'Largest Trades',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText2
