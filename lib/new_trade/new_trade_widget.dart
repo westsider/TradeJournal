@@ -102,14 +102,15 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
               tradeDirection: dropDownDirectionValue,
               tradeType: dropDownTradeTypeValue,
               riskStr: textFieldRiskPointsController.text,
-              t1Str: textFieldT1Controller.text,
-              t2Str: textFieldT2Controller.text,
               t3Str: textFieldT3Controller.text,
               contract: dropDownContractValue,
               entryPrice: valueOrDefault<String>(
                 textFieldEntryPriceController.text,
                 '3400',
               ),
+              t1Str: textFieldT1Controller.text,
+              t1: double.parse(textFieldT1Controller.text),
+              t2Str: textFieldT2Controller.text,
             );
             await TradeRecord.collection.doc().set(tradeCreateData);
             Navigator.pop(context);
