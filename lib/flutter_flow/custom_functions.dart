@@ -87,3 +87,23 @@ String getWinPct(
   String winPct = decimalWIns.toStringAsFixed(2);
   return '$winPct %';
 }
+
+double largestWinner(
+  List<TradeRecord> data,
+  int index,
+) {
+  var maxIndex = index;
+  if (maxIndex == -1 || index >= data.length) {
+    // Pass index of -1 if you want a grand total across all indexes
+    maxIndex = data.length - 1;
+  }
+  var largestWinner = 0.0;
+  for (var i = 0; i <= maxIndex; i++) {
+    double thisGain = data[i].totalGain;
+    if (thisGain > largestWinner) {
+      largestWinner = largestWinner;
+    }
+    print('index $index, gain: $thisGain, largest winner: $largestWinner');
+  }
+  return largestWinner;
+}

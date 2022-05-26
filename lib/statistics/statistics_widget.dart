@@ -658,7 +658,11 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 12, 0, 12),
                                   child: Text(
-                                    '\$1100 win',
+                                    functions
+                                        .largestWinner(
+                                            statisticsTradeRecordList.toList(),
+                                            statisticsTradeRecordList.length)
+                                        .toString(),
                                     textAlign: TextAlign.center,
                                     style:
                                         FlutterFlowTheme.of(context).subtitle1,

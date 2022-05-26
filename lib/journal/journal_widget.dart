@@ -4,7 +4,6 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../new_trade/new_trade_widget.dart';
-import '../flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -173,7 +172,11 @@ class _JournalWidgetState extends State<JournalWidget> {
                                       ),
                                       Text(
                                         valueOrDefault<String>(
-                                          random_data.randomName(true, true),
+                                          formatNumber(
+                                            listViewTradeRecord.totalGain,
+                                            formatType: FormatType.decimal,
+                                            decimalType: DecimalType.automatic,
+                                          ),
                                           '\"0.0\"',
                                         ),
                                         style: FlutterFlowTheme.of(context)
