@@ -111,11 +111,10 @@ class _EditTradeWidgetState extends State<EditTradeWidget> {
                   reviewExit: dropDownRateExitValue,
                   tradeDirection: dropDownDirectionValue,
                   tradeType: dropDownTradeTypeValue,
-                  riskStr: textFieldRiskPointsController?.text ?? '',
-                  t1Str: textFieldT1Controller?.text ?? '',
-                  t2Str: textFieldT2Controller?.text ?? '',
-                  t3Str: textFieldT3Controller?.text ?? '',
                   contract: dropDownContractValue,
+                  t1: editTradeTradeRecord.t1,
+                  t2: editTradeTradeRecord.t2,
+                  t3: editTradeTradeRecord.t3,
                 );
                 await TradeRecord.collection.doc().set(tradeCreateData);
                 Navigator.pop(context);
@@ -295,7 +294,10 @@ class _EditTradeWidgetState extends State<EditTradeWidget> {
                                 child: TextFormField(
                                   controller: textFieldRiskPointsController ??=
                                       TextEditingController(
-                                    text: editTradeTradeRecord.riskStr,
+                                    text: formatNumber(
+                                      editTradeTradeRecord.risk,
+                                      formatType: FormatType.decimal,
+                                    ),
                                   ),
                                   onChanged: (_) => EasyDebounce.debounce(
                                     'textFieldRiskPointsController',
@@ -364,7 +366,10 @@ class _EditTradeWidgetState extends State<EditTradeWidget> {
                                 child: TextFormField(
                                   controller: textFieldEntryPriceController ??=
                                       TextEditingController(
-                                    text: editTradeTradeRecord.entryPrice,
+                                    text: formatNumber(
+                                      editTradeTradeRecord.entry,
+                                      formatType: FormatType.decimal,
+                                    ),
                                   ),
                                   onChanged: (_) => EasyDebounce.debounce(
                                     'textFieldEntryPriceController',
@@ -433,7 +438,10 @@ class _EditTradeWidgetState extends State<EditTradeWidget> {
                                 child: TextFormField(
                                   controller: textFieldT1Controller ??=
                                       TextEditingController(
-                                    text: editTradeTradeRecord.t1Str,
+                                    text: formatNumber(
+                                      editTradeTradeRecord.t1,
+                                      formatType: FormatType.decimal,
+                                    ),
                                   ),
                                   onChanged: (_) => EasyDebounce.debounce(
                                     'textFieldT1Controller',
@@ -501,7 +509,11 @@ class _EditTradeWidgetState extends State<EditTradeWidget> {
                                 child: TextFormField(
                                   controller: textFieldT2Controller ??=
                                       TextEditingController(
-                                    text: editTradeTradeRecord.t2Str,
+                                    text: formatNumber(
+                                      editTradeTradeRecord.t2,
+                                      formatType: FormatType.decimal,
+                                      decimalType: DecimalType.automatic,
+                                    ),
                                   ),
                                   onChanged: (_) => EasyDebounce.debounce(
                                     'textFieldT2Controller',
@@ -569,7 +581,10 @@ class _EditTradeWidgetState extends State<EditTradeWidget> {
                                 child: TextFormField(
                                   controller: textFieldT3Controller ??=
                                       TextEditingController(
-                                    text: editTradeTradeRecord.t3Str,
+                                    text: formatNumber(
+                                      editTradeTradeRecord.t3,
+                                      formatType: FormatType.decimal,
+                                    ),
                                   ),
                                   onChanged: (_) => EasyDebounce.debounce(
                                     'textFieldT3Controller',

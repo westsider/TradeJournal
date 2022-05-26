@@ -44,27 +44,7 @@ abstract class TradeRecord implements Built<TradeRecord, TradeRecordBuilder> {
   String get tradeType;
 
   @nullable
-  @BuiltValueField(wireName: 'risk_str')
-  String get riskStr;
-
-  @nullable
-  @BuiltValueField(wireName: 't1_str')
-  String get t1Str;
-
-  @nullable
-  @BuiltValueField(wireName: 't2_str')
-  String get t2Str;
-
-  @nullable
-  @BuiltValueField(wireName: 't3_str')
-  String get t3Str;
-
-  @nullable
   String get contract;
-
-  @nullable
-  @BuiltValueField(wireName: 'entry_price')
-  String get entryPrice;
 
   @nullable
   double get t1;
@@ -96,12 +76,7 @@ abstract class TradeRecord implements Built<TradeRecord, TradeRecordBuilder> {
     ..reviewExit = ''
     ..tradeDirection = ''
     ..tradeType = ''
-    ..riskStr = ''
-    ..t1Str = ''
-    ..t2Str = ''
-    ..t3Str = ''
     ..contract = ''
-    ..entryPrice = ''
     ..t1 = 0.0
     ..t2 = 0.0
     ..t3 = 0.0
@@ -140,12 +115,7 @@ Map<String, dynamic> createTradeRecordData({
   String reviewExit,
   String tradeDirection,
   String tradeType,
-  String riskStr,
-  String t1Str,
-  String t2Str,
-  String t3Str,
   String contract,
-  String entryPrice,
   double t1,
   double t2,
   double t3,
@@ -165,12 +135,7 @@ Map<String, dynamic> createTradeRecordData({
           ..reviewExit = reviewExit
           ..tradeDirection = tradeDirection
           ..tradeType = tradeType
-          ..riskStr = riskStr
-          ..t1Str = t1Str
-          ..t2Str = t2Str
-          ..t3Str = t3Str
           ..contract = contract
-          ..entryPrice = entryPrice
           ..t1 = t1
           ..t2 = t2
           ..t3 = t3

@@ -70,3 +70,11 @@ double stringToDouble(String value) {
     print(e.toString);
   }
 }
+
+double sumTrade(
+  double t1,
+  double t2,
+  double t3,
+) {
+  return t1 + t2 + t3;
+}
