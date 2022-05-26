@@ -42,9 +42,9 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
     textController6 = TextEditingController();
     textFieldEntryPriceController = TextEditingController();
     textFieldRiskPointsController = TextEditingController();
-    textFieldT1Controller = TextEditingController(text: '4.0');
-    textFieldT2Controller = TextEditingController(text: '10.0');
-    textFieldT3Controller = TextEditingController(text: '0.0');
+    textFieldT1Controller = TextEditingController();
+    textFieldT2Controller = TextEditingController();
+    textFieldT3Controller = TextEditingController();
   }
 
   @override

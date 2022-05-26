@@ -78,3 +78,21 @@ double sumTrade(
 ) {
   return t1 + t2 + t3;
 }
+
+int getRunningTotal(
+  List<TradeRecord> data,
+  int index,
+) {
+  var maxIndex = index;
+  if (maxIndex == -1 || index >= data.length) {
+    // Pass index of -1 if you want a grand total across all indexes
+    maxIndex = data.length - 1;
+  }
+
+  var total = 0.0;
+  for (var i = 0; i <= maxIndex; i++) {
+    total += data[i].totalGain;
+  }
+
+  return total.toInt();
+}

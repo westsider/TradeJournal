@@ -369,6 +369,7 @@ class _EditTradeWidgetState extends State<EditTradeWidget> {
                                     text: formatNumber(
                                       editTradeTradeRecord.entry,
                                       formatType: FormatType.decimal,
+                                      decimalType: DecimalType.automatic,
                                     ),
                                   ),
                                   onChanged: (_) => EasyDebounce.debounce(
@@ -441,6 +442,7 @@ class _EditTradeWidgetState extends State<EditTradeWidget> {
                                     text: formatNumber(
                                       editTradeTradeRecord.t1,
                                       formatType: FormatType.decimal,
+                                      decimalType: DecimalType.automatic,
                                     ),
                                   ),
                                   onChanged: (_) => EasyDebounce.debounce(
