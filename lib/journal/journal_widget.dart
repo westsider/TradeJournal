@@ -4,7 +4,7 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../new_trade/new_trade_widget.dart';
-import '../flutter_flow/custom_functions.dart' as functions;
+import '../flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -173,23 +173,7 @@ class _JournalWidgetState extends State<JournalWidget> {
                                       ),
                                       Text(
                                         valueOrDefault<String>(
-                                          functions.combineTargets(
-                                              valueOrDefault<String>(
-                                                listViewTradeRecord.t1Str,
-                                                '\"0.0\"',
-                                              ),
-                                              valueOrDefault<String>(
-                                                listViewTradeRecord.t2Str,
-                                                '\"0.0\"',
-                                              ),
-                                              valueOrDefault<String>(
-                                                listViewTradeRecord.t3Str,
-                                                '\"0.0\"',
-                                              ),
-                                              valueOrDefault<String>(
-                                                listViewTradeRecord.contract,
-                                                '\"micro\"',
-                                              )),
+                                          random_data.randomName(true, true),
                                           '\"0.0\"',
                                         ),
                                         style: FlutterFlowTheme.of(context)
