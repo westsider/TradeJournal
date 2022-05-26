@@ -609,7 +609,9 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 12, 0, 12),
                                   child: Text(
-                                    '70.2%',
+                                    functions.getWinPct(
+                                        statisticsTradeRecordList.toList(),
+                                        statisticsTradeRecordList.length),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .title1
