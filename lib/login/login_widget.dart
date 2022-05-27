@@ -135,6 +135,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       controller: emailAddressController,
                       obscureText: false,
                       decoration: InputDecoration(
+                        labelText: 'Your email address...',
                         labelStyle:
                             FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Lexend Deca',
@@ -142,6 +143,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   fontSize: 14,
                                   fontWeight: FontWeight.normal,
                                 ),
+                        hintText: 'Enter your email...',
                         hintStyle:
                             FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Lexend Deca',
@@ -182,6 +184,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       controller: passwordController,
                       obscureText: !passwordVisibility,
                       decoration: InputDecoration(
+                        labelText: 'Password',
                         labelStyle:
                             FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Lexend Deca',
@@ -189,6 +192,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   fontSize: 14,
                                   fontWeight: FontWeight.normal,
                                 ),
+                        hintText: 'Enter your email...',
                         hintStyle:
                             FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Lexend Deca',
@@ -218,6 +222,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           onTap: () => setState(
                             () => passwordVisibility = !passwordVisibility,
                           ),
+                          focusNode: FocusNode(skipTraversal: true),
                           child: Icon(
                             passwordVisibility
                                 ? Icons.visibility_outlined

@@ -139,6 +139,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       controller: emailAddressController,
                       obscureText: false,
                       decoration: InputDecoration(
+                        labelText: 'Your email address...',
                         labelStyle:
                             FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Lexend Deca',
@@ -146,6 +147,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   fontSize: 14,
                                   fontWeight: FontWeight.normal,
                                 ),
+                        hintText: 'Enter your email...',
                         hintStyle:
                             FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Lexend Deca',
@@ -186,6 +188,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       controller: passwordController,
                       obscureText: !passwordVisibility,
                       decoration: InputDecoration(
+                        labelText: 'Password',
                         labelStyle:
                             FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Lexend Deca',
@@ -193,6 +196,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   fontSize: 14,
                                   fontWeight: FontWeight.normal,
                                 ),
+                        hintText: 'Enter your email...',
                         hintStyle:
                             FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Lexend Deca',
@@ -222,6 +226,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           onTap: () => setState(
                             () => passwordVisibility = !passwordVisibility,
                           ),
+                          focusNode: FocusNode(skipTraversal: true),
                           child: Icon(
                             passwordVisibility
                                 ? Icons.visibility_outlined
@@ -245,6 +250,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       controller: confirmPasswordController,
                       obscureText: !confirmPasswordVisibility,
                       decoration: InputDecoration(
+                        labelText: 'Confirm Password',
                         labelStyle:
                             FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Lexend Deca',
@@ -252,6 +258,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   fontSize: 14,
                                   fontWeight: FontWeight.normal,
                                 ),
+                        hintText: 'Enter your email...',
                         hintStyle:
                             FlutterFlowTheme.of(context).bodyText1.override(
                                   fontFamily: 'Lexend Deca',
@@ -282,6 +289,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             () => confirmPasswordVisibility =
                                 !confirmPasswordVisibility,
                           ),
+                          focusNode: FocusNode(skipTraversal: true),
                           child: Icon(
                             confirmPasswordVisibility
                                 ? Icons.visibility_outlined

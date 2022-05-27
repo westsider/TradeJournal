@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'lat_lng.dart';
@@ -106,6 +107,34 @@ double largestWinner(
     print('index $maxIndex, gain: $thisGain, largest winner: $largestWinner');
   }
   return largestWinner;
+}
+
+double avgWinner(
+  List<TradeRecord> data,
+  int index,
+) {
+  var maxIndex = index;
+  if (maxIndex == -1 || index >= data.length) {
+    maxIndex = data.length - 1;
+  }
+  var winners = data.where((e) => e.totalGain > 0);
+  var size = winners.length;
+  var total = winners.fold(0, (p, c) => p + c);
+  return total / size;
+}
+
+double avgLoser(
+  List<TradeRecord> data,
+  int index,
+) {
+  var maxIndex = index;
+  if (maxIndex == -1 || index >= data.length) {
+    maxIndex = data.length - 1;
+  }
+  var winners = data.where((e) => e.totalGain < 0);
+  var size = winners.length;
+  var total = winners.fold(0, (p, c) => p + c);
+  return total / size;
 }
 
 double largestLooser(

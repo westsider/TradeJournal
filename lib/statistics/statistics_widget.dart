@@ -228,6 +228,21 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
         opacity: 1,
       ),
     ),
+    'containerOnPageLoadAnimation10': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      duration: 600,
+      fadeIn: true,
+      initialState: AnimationState(
+        offset: Offset(0, 120),
+        scale: 1,
+        opacity: 0,
+      ),
+      finalState: AnimationState(
+        offset: Offset(0, 0),
+        scale: 1,
+        opacity: 1,
+      ),
+    ),
   };
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -497,7 +512,7 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Sales & Revenue',
+                            'Trade Performance',
                             style:
                                 FlutterFlowTheme.of(context).subtitle1.override(
                                       fontFamily: 'Outfit',
@@ -751,6 +766,65 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
                           ),
                         ).animated(
                             [animationsMap['containerOnPageLoadAnimation9']]),
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.4,
+                          height: 160,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFF1F4F8),
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 12, 0, 12),
+                                  child: Text(
+                                    functions
+                                        .avgWinner(
+                                            statisticsTradeRecordList.toList(),
+                                            statisticsTradeRecordList.length)
+                                        .toString(),
+                                    textAlign: TextAlign.center,
+                                    style:
+                                        FlutterFlowTheme.of(context).subtitle1,
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 12, 0, 12),
+                                  child: Text(
+                                    functions
+                                        .avgLoser(
+                                            statisticsTradeRecordList.toList(),
+                                            statisticsTradeRecordList.length)
+                                        .toString(),
+                                    textAlign: TextAlign.center,
+                                    style:
+                                        FlutterFlowTheme.of(context).subtitle1,
+                                  ),
+                                ),
+                                Text(
+                                  'AverageTrades',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText2
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: Color(0xFF57636C),
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.normal,
+                                      ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ).animated(
+                            [animationsMap['containerOnPageLoadAnimation10']]),
                       ],
                     ),
                   ],
