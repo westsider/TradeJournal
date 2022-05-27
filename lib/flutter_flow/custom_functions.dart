@@ -117,10 +117,13 @@ double avgWinner(
   if (maxIndex == -1 || index >= data.length) {
     maxIndex = data.length - 1;
   }
-  var winners = data.where((e) => e.totalGain > 0);
+  var winners = data.where((e) => e.totalGain > 0).toList();
   var size = winners.length;
-  var total = winners.fold(0, (p, c) => p + c);
-  return total / size;
+  var sum = 0.0;
+  for (var i = 0; i <= size - 1; i++) {
+    sum += winners[i].totalGain;
+  }
+  return sum / size;
 }
 
 double avgLoser(
@@ -131,10 +134,13 @@ double avgLoser(
   if (maxIndex == -1 || index >= data.length) {
     maxIndex = data.length - 1;
   }
-  var winners = data.where((e) => e.totalGain < 0);
-  var size = winners.length;
-  var total = winners.fold(0, (p, c) => p + c);
-  return total / size;
+  var losers = data.where((e) => e.totalGain < 0).toList();
+  var size = losers.length;
+  var sum = 0.0;
+  for (var i = 0; i <= size - 1; i++) {
+    sum += losers[i].totalGain;
+  }
+  return sum / size;
 }
 
 double largestLooser(
