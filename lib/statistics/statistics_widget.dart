@@ -553,49 +553,52 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   12, 12, 12, 12),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.payments,
-                                    color: Color(0xFF0F1113),
-                                    size: 44,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 12, 0, 12),
-                                    child: Text(
-                                      functions
-                                          .getRunningTotal(
-                                              statisticsTradeRecordList
-                                                  .toList(),
-                                              statisticsTradeRecordList.length)
-                                          .toString(),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.payments,
+                                      color: Color(0xFF0F1113),
+                                      size: 30,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0, 12, 0, 12),
+                                      child: Text(
+                                        functions
+                                            .getRunningTotal(
+                                                statisticsTradeRecordList
+                                                    .toList(),
+                                                statisticsTradeRecordList
+                                                    .length)
+                                            .toString(),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .title1
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              color: Color(0xFF0F1113),
+                                              fontSize: 32,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                      ),
+                                    ),
+                                    Text(
+                                      'Points Profit\n',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
-                                          .title1
+                                          .bodyText2
                                           .override(
                                             fontFamily: 'Outfit',
-                                            color: Color(0xFF0F1113),
-                                            fontSize: 32,
-                                            fontWeight: FontWeight.w500,
+                                            color: Color(0xFF57636C),
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.normal,
                                           ),
                                     ),
-                                  ),
-                                  Text(
-                                    'Points Profit\n',
-                                    textAlign: TextAlign.center,
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText2
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: Color(0xFF57636C),
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),
