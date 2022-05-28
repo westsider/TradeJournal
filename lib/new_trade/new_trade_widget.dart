@@ -154,8 +154,8 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
                                   minTime: DateTime(0, 0, 0),
                                 );
 
-                                setState(() => FFAppState().lastDate =
-                                    FFAppState().lastDate);
+                                setState(
+                                    () => FFAppState().lastDate = datePicked);
                               },
                               text: dateTimeFormat(
                                   'yMMMd', FFAppState().lastDate),
