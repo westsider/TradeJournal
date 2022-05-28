@@ -154,11 +154,11 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
                                   minTime: DateTime(0, 0, 0),
                                 );
 
-                                setState(
-                                    () => FFAppState().lastDate = datePicked);
+                                setState(() => FFAppState().lastDate =
+                                    FFAppState().lastDate);
                               },
                               text: dateTimeFormat(
-                                  'M/d H:mm', FFAppState().lastDate),
+                                  'yMMMd', FFAppState().lastDate),
                               options: FFButtonOptions(
                                 width: 250,
                                 height: 40,
