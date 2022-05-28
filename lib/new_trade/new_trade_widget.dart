@@ -40,10 +40,10 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
   void initState() {
     super.initState();
     textController6 = TextEditingController();
-    textFieldEntryPriceController = TextEditingController();
-    textFieldRiskPointsController = TextEditingController();
-    textFieldT1Controller = TextEditingController();
-    textFieldT2Controller = TextEditingController();
+    textFieldEntryPriceController = TextEditingController(text: '1100.50');
+    textFieldRiskPointsController = TextEditingController(text: '4.0');
+    textFieldT1Controller = TextEditingController(text: '4.0');
+    textFieldT2Controller = TextEditingController(text: '8.0');
     textFieldT3Controller = TextEditingController(text: '0.0');
   }
 
@@ -423,7 +423,6 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText: '4.0',
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
@@ -487,7 +486,6 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText: '8.0',
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
