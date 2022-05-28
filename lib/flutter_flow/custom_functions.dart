@@ -60,7 +60,6 @@ int getRunningTotal(
     // Pass index of -1 if you want a grand total across all indexes
     maxIndex = data.length - 1;
   }
-
   var total = 0.0;
   for (var i = 0; i <= maxIndex; i++) {
     total += data[i].totalGain;
@@ -75,7 +74,6 @@ String getWinPct(
 ) {
   var maxIndex = index;
   if (maxIndex == -1 || index >= data.length) {
-    // Pass index of -1 if you want a grand total across all indexes
     maxIndex = data.length - 1;
   }
   var winCount = 0.0;
@@ -95,7 +93,6 @@ double largestWinner(
 ) {
   var maxIndex = index;
   if (maxIndex == -1 || index >= data.length) {
-    // Pass index of -1 if you want a grand total across all indexes
     maxIndex = data.length - 1;
   }
   double largestWinner = 0.0;
@@ -104,7 +101,7 @@ double largestWinner(
     if (thisGain > largestWinner) {
       largestWinner = thisGain;
     }
-    print('index $maxIndex, gain: $thisGain, largest winner: $largestWinner');
+    // print('index $maxIndex, gain: $thisGain, largest winner: $largestWinner');
   }
   return largestWinner;
 }
@@ -158,7 +155,11 @@ double largestLooser(
     if (thisGain < largestLoser) {
       largestLoser = thisGain;
     }
-    print('index $maxIndex, gain: $thisGain, largest winner: $largestLoser');
+    //print('index $maxIndex, gain: $thisGain, largest winner: $largestLoser');
   }
   return largestLoser;
+}
+
+DateTime timeNow() {
+  return DateTime.now();
 }

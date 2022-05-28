@@ -5,6 +5,7 @@ import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../custom_code/widgets/index.dart' as custom_widgets;
 import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -44,7 +45,7 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
     textFieldRiskPointsController = TextEditingController();
     textFieldT1Controller = TextEditingController();
     textFieldT2Controller = TextEditingController();
-    textFieldT3Controller = TextEditingController();
+    textFieldT3Controller = TextEditingController(text: '0.0');
   }
 
   @override
@@ -88,7 +89,6 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
           onPressed: () async {
             final tradeCreateData = createTradeRecordData(
               user: currentUserReference,
-              createdAt: datePicked,
               error: valueOrDefault<String>(
                 textController6.text,
                 'none',
@@ -112,6 +112,7 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
                   double.parse(textFieldT1Controller.text),
                   double.parse(textFieldT2Controller.text),
                   double.parse(textFieldT3Controller.text)),
+              createdAt: FFAppState().lastDate,
             );
             await TradeRecord.collection.doc().set(tradeCreateData);
             Navigator.pop(context);
@@ -140,6 +141,14 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+                          Container(
+                            width: 5,
+                            height: 5,
+                            child: custom_widgets.UpdateTime(
+                              width: 5,
+                              height: 5,
+                            ),
+                          ),
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(8, 2, 8, 2),
                             child: FFButtonWidget(
@@ -150,11 +159,15 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
                                   onConfirm: (date) {
                                     setState(() => datePicked = date);
                                   },
-                                  currentTime: getCurrentTimestamp,
+                                  currentTime: datePicked,
                                   minTime: DateTime(0, 0, 0),
                                 );
+
+                                setState(
+                                    () => FFAppState().lastDate = datePicked);
                               },
-                              text: 'Date',
+                              text: dateTimeFormat(
+                                  'M/d H:mm', FFAppState().lastDate),
                               options: FFButtonOptions(
                                 width: 250,
                                 height: 40,
@@ -290,7 +303,6 @@ class _NewTradeWidgetState extends State<NewTradeWidget> {
                               autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
-                                hintText: '4.0',
                                 enabledBorder: UnderlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0xFF303030),
