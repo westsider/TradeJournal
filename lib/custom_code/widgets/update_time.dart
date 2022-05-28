@@ -24,7 +24,9 @@ class UpdateTime extends StatefulWidget {
 class _UpdateTimeState extends State<UpdateTime> {
   @override
   Widget build(BuildContext context) {
-    FFAppState().lastDate = DateTime.now();
+    DateTime now = DateTime.now();
+    FFAppState().lastDate = now;
+    print('-------------- APP STATE lastDate SET $now-------------');
     return Container();
   }
 }
