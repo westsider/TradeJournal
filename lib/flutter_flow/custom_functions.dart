@@ -150,15 +150,33 @@ double expectancy(
   if (maxIndex == -1 || index >= data.length) {
     maxIndex = data.length - 1;
   }
+  // calc average winner
   var winners = data.where((e) => e.totalGain > 0).toList();
-  var size = winners.length;
-  var sum = 0.0;
-  for (var i = 0; i <= size - 1; i++) {
-    sum += winners[i].totalGain;
+  var numWinners = winners.length;
+  var allWinners = 0.0;
+  for (var i = 0; i <= numWinners - 1; i++) {
+    allWinners += winners[i].totalGain;
   }
+  var avgWinner = allWinners / numWinners;
+  // calc win raio
+  double winRatio = (numWinners / data.length) * 100.0;
+  // calc avg loser
+  var losers = data.where((e) => e.totalGain < 0).toList();
+  var numLosers = losers.length;
+  var allLosers = 0.0;
+  for (var i = 0; i <= numLosers - 1; i++) {
+    allLosers += winners[i].totalGain;
+  }
+  var avgLoser = allLosers / numLosers;
   // riskReward = average size of a profitable trade divided by the average size of a losing trade
+  var riskReward = avgWinner / avgLoser;
   // Expectancy = (Reward to Risk ratio x win ratio) – Loss ratio
-  return sum / size;
+  var loseRatio = 100.0 - winRatio;
+  var expectancy = (riskReward * winRatio) - loseRatio;
+  print(
+      'expectancy = $expectancy risk rewward ratio $riskReward, * win ratio $winRatio, - loss ratio $loseRatio');
+
+  return expectancy;
 }
 
 double avgLoser(
