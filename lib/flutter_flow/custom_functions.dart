@@ -68,6 +68,24 @@ int getRunningTotal(
   return total.toInt();
 }
 
+int getDailyProfit(
+  List<TradeRecord> data,
+  int index,
+) {
+  var maxIndex = index;
+  if (maxIndex == -1 || index >= data.length) {
+    // Pass index of -1 if you want a grand total across all indexes
+    maxIndex = data.length - 1;
+  }
+  var total = 0.0;
+  data.sort(((a, b) => a.createdAt.compareTo(b.createdAt)));
+  for (var i = 0; i <= maxIndex; i++) {
+    total += data[i].totalGain;
+    print(data[i].createdAt);
+  }
+  return total.toInt();
+}
+
 String getWinPct(
   List<TradeRecord> data,
   int index,
