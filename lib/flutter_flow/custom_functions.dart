@@ -87,6 +87,25 @@ String getWinPct(
   return '$winPct %';
 }
 
+String getWinPctCopy(
+  List<TradeRecord> data,
+  int index,
+) {
+  var maxIndex = index;
+  if (maxIndex == -1 || index >= data.length) {
+    maxIndex = data.length - 1;
+  }
+  var winCount = 0.0;
+  for (var i = 0; i <= maxIndex; i++) {
+    if (data[i].totalGain > 0.0) {
+      winCount += 1.0;
+    }
+  }
+  double decimalWIns = (winCount / data.length) * 100.0;
+  String winPct = decimalWIns.toStringAsFixed(2);
+  return '$winPct %';
+}
+
 double largestWinner(
   List<TradeRecord> data,
   int index,
@@ -120,6 +139,25 @@ double avgWinner(
   for (var i = 0; i <= size - 1; i++) {
     sum += winners[i].totalGain;
   }
+  return sum / size;
+}
+
+double expectancy(
+  List<TradeRecord> data,
+  int index,
+) {
+  var maxIndex = index;
+  if (maxIndex == -1 || index >= data.length) {
+    maxIndex = data.length - 1;
+  }
+  var winners = data.where((e) => e.totalGain > 0).toList();
+  var size = winners.length;
+  var sum = 0.0;
+  for (var i = 0; i <= size - 1; i++) {
+    sum += winners[i].totalGain;
+  }
+  // riskReward = average size of a profitable trade divided by the average size of a losing trade
+  // Expectancy = (Reward to Risk ratio x win ratio) – Loss ratio
   return sum / size;
 }
 
