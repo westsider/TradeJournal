@@ -740,7 +740,11 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 12, 0, 12),
                                   child: Text(
-                                    '\$45.6M',
+                                    functions
+                                        .expectancy(
+                                            statisticsTradeRecordList.toList(),
+                                            statisticsTradeRecordList.length)
+                                        .toString(),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .title1
