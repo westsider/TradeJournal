@@ -414,7 +414,11 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                '65%',
+                                functions
+                                    .getDailyProfit(
+                                        statisticsTradeRecordList.toList(),
+                                        statisticsTradeRecordList.length)
+                                    .toString(),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
