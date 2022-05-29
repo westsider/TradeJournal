@@ -165,7 +165,7 @@ double expectancy(
   var numLosers = losers.length;
   var allLosers = 0.0;
   for (var i = 0; i <= numLosers - 1; i++) {
-    allLosers += winners[i].totalGain;
+    allLosers += losers[i].totalGain;
   }
   var avgLoser = allLosers / numLosers;
   // riskReward = average size of a profitable trade divided by the average size of a losing trade
