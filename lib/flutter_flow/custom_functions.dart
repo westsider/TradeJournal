@@ -68,7 +68,7 @@ int getRunningTotal(
   return total.toInt();
 }
 
-int getDailyProfit(
+List<double> getDailyProfit(
   List<TradeRecord> data,
   int index,
 ) {
@@ -78,12 +78,48 @@ int getDailyProfit(
     maxIndex = data.length - 1;
   }
   var total = 0.0;
+  List<double> dailyProfit = [];
+  DateTime lastDate;
+  // sort list by date
   data.sort(((a, b) => a.createdAt.compareTo(b.createdAt)));
+  print('getting sorted daily profit -----------------');
   for (var i = 0; i <= maxIndex; i++) {
-    total += data[i].totalGain;
-    print(data[i].createdAt);
+    print('i: $i, max: $maxIndex');
+    DateTime thisDate = data[i].createdAt;
+    print(thisDate);
+    // check for null date
+    if (lastDate == null) {
+      print('no last date!');
+      total += data[i].totalGain;
+      lastDate = data[i].createdAt;
+    } else if (thisDate.difference(lastDate).inDays == 1) {
+      //if new date
+      print('New Day $thisDate, add $total');
+      // check null
+      if (total != null) {
+        // save sum into an array
+        dailyProfit.add(total);
+        // sum = profit
+        total = data[i].totalGain;
+      }
+      if (i == maxIndex) {
+        // we have a prior total and its the last entry
+        print('last entry $i');
+        total = data[i].totalGain;
+        dailyProfit.add(total);
+      }
+      // save date
+      lastDate = data[i].createdAt;
+    } else {
+      // same day, sum the profit
+      total += data[i].totalGain;
+      print('Same Day $thisDate, add $total');
+      // save date
+      lastDate = data[i].createdAt;
+    }
   }
-  return total.toInt();
+  print('here is the array $dailyProfit');
+  return dailyProfit;
 }
 
 String getWinPct(
