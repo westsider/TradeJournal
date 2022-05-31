@@ -347,31 +347,33 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
-                            child: Container(
-                              width: 300,
-                              height: 300,
-                              child: FlutterFlowLineChart(
-                                data: [
-                                  FFLineChartData(
-                                    xData: functions.getDailyProfit(
-                                        statisticsTradeRecordList.toList(),
-                                        statisticsTradeRecordList.length),
-                                    yData: functions.getDailyDate(
-                                        statisticsTradeRecordList.toList(),
-                                        statisticsTradeRecordList.length),
-                                    settings: LineChartBarData(
-                                      color: Color(0xFFD354E3),
-                                      barWidth: 1,
-                                      dotData: FlDotData(show: false),
-                                    ),
-                                  )
-                                ],
-                                backgroundColor: Colors.white,
-                                axisBounds: AxisBounds(),
-                                xAxisLabelInfo: AxisLabelInfo(),
-                                yAxisLabelInfo: AxisLabelInfo(),
+                          Container(
+                            width: 300,
+                            height: 300,
+                            child: FlutterFlowLineChart(
+                              data: [
+                                FFLineChartData(
+                                  xData: functions.getDailyDate(
+                                      statisticsTradeRecordList.toList(),
+                                      statisticsTradeRecordList.length),
+                                  yData: functions.getDailyProfit(
+                                      statisticsTradeRecordList.toList(),
+                                      statisticsTradeRecordList.length),
+                                  settings: LineChartBarData(
+                                    color: Color(0xFF263238),
+                                    barWidth: 5,
+                                  ),
+                                )
+                              ],
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).primaryBtnText,
+                              axisBounds: AxisBounds(),
+                              xAxisLabelInfo: AxisLabelInfo(),
+                              yAxisLabelInfo: AxisLabelInfo(
+                                title: 'Profit',
+                                titleTextStyle: TextStyle(
+                                  fontSize: 14,
+                                ),
                               ),
                             ),
                           ),

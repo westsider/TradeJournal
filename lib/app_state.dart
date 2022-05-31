@@ -27,6 +27,10 @@ class FFAppState {
     _lastDate = _value;
     prefs.setInt('ff_lastDate', _value.millisecondsSinceEpoch);
   }
+
+  List<double> prices = [0, 1, 2, 3, 4];
+
+  List<int> time = [0, 1, 2, 3, 4];
 }
 
 LatLng _latLngFromString(String val) {

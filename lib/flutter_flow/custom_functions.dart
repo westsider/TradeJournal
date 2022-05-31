@@ -118,6 +118,7 @@ List<double> getDailyProfit(
       lastDate = data[i].createdAt;
     }
   }
+  print(dailyProfit);
   print('here is the array $dailyProfit');
   return dailyProfit;
 }
@@ -174,6 +175,7 @@ List<DateTime> getDailyDate(
         lastDate = data[i].createdAt;
       }
     }
+    print(dailyDate);
     return dailyDate;
   }
 }
