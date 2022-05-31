@@ -126,13 +126,56 @@ List<DateTime> getDailyDate(
   List<TradeRecord> data,
   int index,
 ) {
-  var maxIndex = index;
-  if (maxIndex == -1 || index >= data.length) {
-    // Pass index of -1 if you want a grand total across all indexes
-    maxIndex = data.length - 1;
+  List<DateTime> getDailyDate(
+    List<TradeRecord> data,
+    int index,
+  ) {
+    var maxIndex = index;
+    if (maxIndex == -1 || index >= data.length) {
+      // Pass index of -1 if you want a grand total across all indexes
+      maxIndex = data.length - 1;
+    }
+    List<DateTime> dailyDate;
+    var total = 0.0;
+    List<double> dailyProfit = [];
+    DateTime lastDate;
+    // sort list by date
+    data.sort(((a, b) => a.createdAt.compareTo(b.createdAt)));
+    print('getting sorted daily profit -----------------');
+    for (var i = 0; i <= maxIndex; i++) {
+      DateTime thisDate = data[i].createdAt;
+      // check for null date
+      if (lastDate == null) {
+        total += data[i].totalGain;
+        lastDate = data[i].createdAt;
+      } else if (thisDate.difference(lastDate).inDays == 1) {
+        //if new date
+        print('New Day $thisDate, add $total');
+        // check null
+        if (total != null) {
+          // save sum into an array
+          dailyProfit.add(total);
+          dailyDate.add(thisDate);
+          // sum = profit
+          total = data[i].totalGain;
+        }
+        if (i == maxIndex) {
+          // we have a prior total and its the last entry
+          total = data[i].totalGain;
+          dailyProfit.add(total);
+          dailyDate.add(thisDate);
+        }
+        // save date
+        lastDate = data[i].createdAt;
+      } else {
+        // same day, sum the profit
+        total += data[i].totalGain;
+        // save date
+        lastDate = data[i].createdAt;
+      }
+    }
+    return dailyDate;
   }
-  List<DateTime> dailyDate;
-  return dailyDate;
 }
 
 String getWinPct(

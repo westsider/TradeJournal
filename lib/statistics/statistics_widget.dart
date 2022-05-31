@@ -6,7 +6,6 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../journal/journal_widget.dart';
 import '../flutter_flow/custom_functions.dart' as functions;
-import '../flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -359,9 +358,9 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
                                     xData: functions.getDailyProfit(
                                         statisticsTradeRecordList.toList(),
                                         statisticsTradeRecordList.length),
-                                    yData: List.generate(
-                                        random_data.randomInteger(1, 10),
-                                        (index) => random_data.randomDate()),
+                                    yData: functions.getDailyDate(
+                                        statisticsTradeRecordList.toList(),
+                                        statisticsTradeRecordList.length),
                                     settings: LineChartBarData(
                                       color: Color(0xFFD354E3),
                                       barWidth: 1,
