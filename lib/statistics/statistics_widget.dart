@@ -1,10 +1,12 @@
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
+import '../flutter_flow/flutter_flow_charts.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../journal/journal_widget.dart';
 import '../flutter_flow/custom_functions.dart' as functions;
+import '../flutter_flow/random_data_util.dart' as random_data;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -341,6 +343,42 @@ class _StatisticsWidgetState extends State<StatisticsWidget>
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(8, 8, 8, 8),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(2, 2, 2, 2),
+                            child: Container(
+                              width: 300,
+                              height: 300,
+                              child: FlutterFlowLineChart(
+                                data: [
+                                  FFLineChartData(
+                                    xData: functions.getDailyProfit(
+                                        statisticsTradeRecordList.toList(),
+                                        statisticsTradeRecordList.length),
+                                    yData: List.generate(
+                                        random_data.randomInteger(1, 10),
+                                        (index) => random_data.randomDate()),
+                                    settings: LineChartBarData(
+                                      color: Color(0xFFD354E3),
+                                      barWidth: 1,
+                                      dotData: FlDotData(show: false),
+                                    ),
+                                  )
+                                ],
+                                backgroundColor: Colors.white,
+                                axisBounds: AxisBounds(),
+                                xAxisLabelInfo: AxisLabelInfo(),
+                                yAxisLabelInfo: AxisLabelInfo(),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(20, 17, 20, 0),
                       child: Row(

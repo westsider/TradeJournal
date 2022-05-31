@@ -122,6 +122,19 @@ List<double> getDailyProfit(
   return dailyProfit;
 }
 
+List<DateTime> getDailyDate(
+  List<TradeRecord> data,
+  int index,
+) {
+  var maxIndex = index;
+  if (maxIndex == -1 || index >= data.length) {
+    // Pass index of -1 if you want a grand total across all indexes
+    maxIndex = data.length - 1;
+  }
+  List<DateTime> dailyDate;
+  return dailyDate;
+}
+
 String getWinPct(
   List<TradeRecord> data,
   int index,
